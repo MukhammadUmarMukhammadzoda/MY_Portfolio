@@ -1,3 +1,4 @@
+from http import client
 from django.shortcuts import render
 from .models import *
 # Create your views here.
@@ -37,12 +38,15 @@ def resume(request):
     return render(request, 'resume.html', data )
 
 def works(request):
+    works = Projects.objects.all()
 
-    return render(request, 'works.html' )
+    return render(request, 'works.html', {"projects": works} )
 
 def testimonials(request):
+    clients = Clients.objects.all()
 
-    return render(request, 'testimonials.html' )
+
+    return render(request, 'testimonials.html', {'clients': clients} )
 
 
 def contact(request):
