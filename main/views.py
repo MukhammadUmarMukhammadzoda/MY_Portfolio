@@ -21,12 +21,20 @@ def about(request):
 
 
 def services(request):
+    services = Services.objects.all()
 
-    return render(request, 'services.html' )
+    return render(request, 'services.html', {'services': services} )
 
 def resume(request):
+    education = Education.objects.all()
+    experience = Experiences.objects.all()
+     
+    data = {
+        'education' : education,
+        'experience' : experience
+    }
 
-    return render(request, 'resume.html' )
+    return render(request, 'resume.html', data )
 
 def works(request):
 
