@@ -16,19 +16,19 @@ def welcome(request):
 
 
 def about(request):
-    skills = Skills.objects.all()
+    skills = Skill.objects.all()
 
     return render(request, 'about.html', {"skills": skills} )
 
 
 def services(request):
-    services = Services.objects.all()
+    services = Service.objects.all()
 
     return render(request, 'services.html', {'services': services} )
 
 def resume(request):
     education = Education.objects.all()
-    experience = Experiences.objects.all()
+    experience = Experience.objects.all()
      
     data = {
         'education' : education,
@@ -38,12 +38,12 @@ def resume(request):
     return render(request, 'resume.html', data )
 
 def works(request):
-    works = Projects.objects.all()
+    works = Project.objects.all()
 
     return render(request, 'works.html', {"projects": works} )
 
 def testimonials(request):
-    clients = Clients.objects.all()
+    clients = Client.objects.all()
 
 
     return render(request, 'testimonials.html', {'clients': clients} )
