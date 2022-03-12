@@ -105,28 +105,29 @@
                                 </div>
 
                                 <form id="contact-form" class="row contact-form no-gutter" action="#" method="post">
+                                    {% csrf_token %}
                                     <div class="col-xs-12 col-sm-6">
                                         <div class="input-field name">
                                             <span class="input-icon" id="name" ><i class="tf-profile-male"></i></span>
-                                            <input type="text" class="form-control"  placeholder="Enter your name">
+                                            <input type="text" class="form-control" name="name" placeholder="Enter your name">
                                         </div>
                                     </div> <!-- ./col- -->
                                     <div class="col-xs-12 col-sm-6">
                                         <div class="input-field email">
                                             <span class= "input-icon" id="email"><i class="tf-envelope2"></i></span>
-                                            <input type="email" class="form-control" name="email" placeholder="Your email address">
+                                            <input type="email" class="form-control"  name="email" placeholder="Your email address">
                                         </div>
                                     </div> <!-- ./col- -->
                                     <div class="col-xs-12 col-sm-12">
                                         <div class="input-field">
                                             <span class= "input-icon" id="subject"><i class="tf-pricetags"></i></span>
-                                            <input type="text" class="form-control" name="subject" placeholder="Enter the discussion title">
+                                            <input type="text" class="form-control" name="title"  placeholder="Enter the discussion title">
                                         </div>
                                     </div> <!-- ./col- -->
                                     <div class="col-xs-12 col-sm-12">
                                         <div class="input-field message">
                                             <span class= "input-icon" ><i class="tf-pencil2"></i></span>
-                                            <textarea name="message" id="message" class="form-control" placeholder="Write your message"></textarea>
+                                            <textarea name="message"   class="form-control" placeholder="Write your message"></textarea>
                                         </div>
                                     </div> <!-- ./col- -->
                                     <div class="col-xs-12 col-sm-12">

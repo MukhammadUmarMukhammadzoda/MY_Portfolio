@@ -1,5 +1,5 @@
 from http import client
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .models import *
 # Create your views here.
 
@@ -50,5 +50,16 @@ def testimonials(request):
 
 
 def contact(request):
+    if request.method == 'POST':
+        contact = Contact()
+        contact.name = request.POST.get('name')
+        contact.email = request.POST.get('email')
+        contact.title = request.POST.get('title')
+        contact.message = request.POST.get('message')
+        contact.save()
+        return redirect('/')
+
+
+
 
     return render(request, 'contact.html' )
